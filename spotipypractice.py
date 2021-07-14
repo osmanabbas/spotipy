@@ -3,6 +3,10 @@ import spotipy
 import pandas as pd
 import sqlalchemy
 from sqlalchemy import create_engine
+<<<<<<< HEAD
+=======
+
+>>>>>>> 940c70f138a2c7a6c2de74fa084dffa354200ca0
 def create_track_id(song_link):
   stop=31
   song_link=song_link[stop::]
@@ -18,7 +22,13 @@ def make_a_dict(album_name,artists,song,track_number,release_date):
   return dict
 CLIENT_ID='2aa8da1299594be28d5bced0f4008ab3'
 CLIENT_SECRET='2a2e4cb0bcb54dc6b5b894d5052162e7'
+<<<<<<< HEAD
 AUTH_URL='https://accounts.spotify.com/api/token'
+=======
+
+AUTH_URL='https://accounts.spotify.com/api/token'
+
+>>>>>>> 940c70f138a2c7a6c2de74fa084dffa354200ca0
 response=requests.post(AUTH_URL,{
     'grant_type': 'client_credentials',
     'client_id': CLIENT_ID,
@@ -48,4 +58,8 @@ dict=make_a_dict(album_name,artists,song,track_number,release_date)
 #print(dict)
 song_dataframe = pd.DataFrame.from_dict(dict)
 engine=create_engine('mysql://root:codio@localhost/spotipy1')
+<<<<<<< HEAD
 song_dataframe.to_sql('song_details', con=engine, if_exists='replace', index=True) #the table song_details has not been made yet
+=======
+song_dataframe.to_sql('song_details', con=engine, if_exists='replace', index=True) #the table song_details has not been made yet
+>>>>>>> 940c70f138a2c7a6c2de74fa084dffa354200ca0
